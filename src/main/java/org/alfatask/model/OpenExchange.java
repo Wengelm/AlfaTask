@@ -1,6 +1,7 @@
 package org.alfatask.model;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class OpenExchange {
 
@@ -8,12 +9,12 @@ public class OpenExchange {
      private String license;
      private Long timestamp;
      private String base;
-     private HashMap<String, Float> rates;
+     private Map<String, Float> rates;
 
     public OpenExchange() {
     }
 
-    public OpenExchange(String disclaimer, String license, Long timestamp, String base, HashMap<String, Float> rates) {
+    public OpenExchange(String disclaimer, String license, Long timestamp, String base, Map<String, Float> rates) {
         this.disclaimer = disclaimer;
         this.license = license;
         this.timestamp = timestamp;
@@ -53,11 +54,11 @@ public class OpenExchange {
         this.base = base;
     }
 
-    public HashMap<String, Float> getRates() {
+    public Map<String, Float> getRates() {
         return rates;
     }
 
-    public void setRates(HashMap<String, Float> rates) {
+    public void setRates(Map<String, Float> rates) {
         this.rates = rates;
     }
 
