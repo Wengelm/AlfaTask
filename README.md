@@ -15,7 +15,7 @@
 
 В браузере открыть: http://localhost:8080/ .  
 
-[Giphy](https://github.com/Wengelm/AlfaTask/blob/main/index.png "Вывод рандомной Giphy")​
+![Giphy](https://github.com/Wengelm/AlfaTask/blob/main/index.png "Вывод рандомной Giphy")​
 
  http://localhost:8080/giphy . Возвращает Giphy object формата:
  
