@@ -9,11 +9,17 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
+
 }
+
+
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+
+
 
 
 version = '0.0.1-SNAPSHOT'
@@ -33,6 +39,9 @@ dependencies {
     compile "com.netflix.hystrix:hystrix-javanica:1.5.10"
 
 
-
+    testCompile "com.github.tomakehurst:wiremock-jre8:2.27.2"
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+springBoot {
+    mainClass = 'org.alfatask.Application'
 }
