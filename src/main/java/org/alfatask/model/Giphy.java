@@ -54,26 +54,19 @@ public class Giphy {
     @JsonProperty("trending_datetime")
     private String trendingDateTime;
 
-    @Override
-    public String toString() {
-        return "Giphy{" +
-                "type='" + type + '\'' +
-                ", id='" + id + '\'' +
-                ", slug='" + slug + '\'' +
-                ", url='" + url + '\'' +
-                ", bitlyGifUrl='" + bitlyGifUrl + '\'' +
-                ", bitlyUrl='" + bitlyUrl + '\'' +
-                ", embedUrl='" + embedUrl + '\'' +
-                ", username='" + username + '\'' +
-                ", source='" + source + '\'' +
-                ", rating='" + rating + '\'' +
-                ", caption='" + caption + '\'' +
-                ", contentUrl='" + contentUrl + '\'' +
-                ", sourceTld='" + sourceTld + '\'' +
-                ", sourcePostUrl='" + sourcePostUrl + '\'' +
-                ", importDateTime='" + importDateTime + '\'' +
-                ", trendingDateTime='" + trendingDateTime + '\'' +
-                '}';
+    @JsonProperty("images")
+    private Images images;;
+
+
+    public Giphy() {
+    }
+
+    public Images getImages() {
+        return images;
+    }
+
+    public void setImages(Images images) {
+        this.images = images;
     }
 
     public String getType() {

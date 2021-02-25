@@ -5,22 +5,21 @@ import org.alfatask.model.GiphyResponse;
 import org.alfatask.service.ExchangeRateService;
 import org.alfatask.service.GiphyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class MainController {
+@RestController
+public class MainRestController {
 
 
     @Autowired
     private ExchangeRateService exchangeRateService;
     @Autowired
     private GiphyService giphyService;
+    
 
-
-    @RequestMapping("/")
-    public String index(Model model)
+    @RequestMapping("/giphy")
+    public Giphy index()
 
     {
 
@@ -28,9 +27,9 @@ public class MainController {
 
         GiphyResponse ghResponse = giphyService.getGiphy(isExchangeRateLarger);
 
-        model.addAttribute("giphy",ghResponse.data.getImages().getFixedHeight().getUrl());
 
 
-        return "index";
+        return ghResponse.data;
     }
+
 }
