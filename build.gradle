@@ -1,27 +1,41 @@
-plugins {
-    id 'org.springframework.boot' version '2.4.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+        springCloudVersion = '1.2.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-sourceCompatibility = '1.8'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // Spring boot jar
+    compile('org.springframework.boot:spring-boot-starter')
+    compile "org.springframework.boot:spring-boot-starter-web"
+
+
+    // Feign jar
     compile 'org.springframework.cloud:spring-cloud-starter-feign:1.2.6.RELEASE'
     compile "com.netflix.hystrix:hystrix-javanica:1.5.10"
 
+    // Spring Cloud
+    compile "org.springframework.cloud:spring-cloud-core:$springCloudVersion"
+    compile "org.springframework.cloud:spring-cloud-spring-service-connector:$springCloudVersion"
 
-}
 
-test {
-    useJUnitPlatform()
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
