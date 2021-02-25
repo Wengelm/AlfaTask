@@ -15,6 +15,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
+
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -26,15 +27,11 @@ dependencies {
     // Spring boot jar
     compile('org.springframework.boot:spring-boot-starter')
     compile "org.springframework.boot:spring-boot-starter-web"
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
-
-    // Feign jar
     compile 'org.springframework.cloud:spring-cloud-starter-feign:1.2.6.RELEASE'
     compile "com.netflix.hystrix:hystrix-javanica:1.5.10"
 
-    // Spring Cloud
-    compile "org.springframework.cloud:spring-cloud-core:$springCloudVersion"
-    compile "org.springframework.cloud:spring-cloud-spring-service-connector:$springCloudVersion"
 
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
